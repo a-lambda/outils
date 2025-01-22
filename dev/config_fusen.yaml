@@ -3,10 +3,10 @@ flat_outils.Rmd:
   state: active
   R: R/get_working_files.R
   tests: tests/testthat/test-get_working_files.R
-  vignettes: vignettes/minimal.Rmd
+  vignettes: vignettes/outils.Rmd
   inflate:
     flat_file: dev/flat_outils.Rmd
-    vignette_name: Minimal
+    vignette_name: outils
     open_vignette: true
     check: true
     document: true
