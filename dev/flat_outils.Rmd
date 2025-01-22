@@ -22,7 +22,7 @@ pkgload::load_all(export_all = FALSE)
 
 The goal of this function is to find all R files that can contains functions written in R language.
 
-The result is a vector of strings giving all the path to these R files relatively to the current directory.
+The result is a vector of strings giving all the path to these R files relatively to the directory path given as argument.
 
 Path containing `library` are omitted. 
     
@@ -39,7 +39,10 @@ Path containing `library` are omitted.
 #' @export
 get_working_files <- function(path = ".", recursive = TRUE){
     
-  fichiers <- list.files(pattern = "[.](R|[R|r|Q|q]md)$", recursive = TRUE)
+  fichiers <- list.files(path = path,
+                         recursive = recursive,
+                         pattern = "[.](R|[R|r|Q|q]md)$")
+  
   resultat <- fichiers[!grepl("[/]library[/]", fichiers)]
   
   return(resultat)
@@ -70,5 +73,5 @@ test_that("get_working_files works", {
 ```{r development-inflate, eval=FALSE}
 # Run but keep eval=FALSE to avoid infinite loop
 # Execute in the console directly
-fusen::inflate(flat_file = "dev/flat_outils.Rmd", vignette_name = "Minimal")
+fusen::inflate(flat_file = "dev/flat_outils.Rmd", vignette_name = "outils")
 ```
