@@ -1,8 +1,8 @@
 ---
-title: "Minimal"
+title: "outils"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Minimal}
+  %\VignetteIndexEntry{outils}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -30,7 +30,7 @@ library(outils)
 
 The goal of this function is to find all R files that can contains functions written in R language.
 
-The result is a vector of strings giving all the path to these R files relatively to the current directory.
+The result is a vector of strings giving all the path to these R files relatively to the directory path given as argument.
 
 Path containing `library` are omitted. 
     
