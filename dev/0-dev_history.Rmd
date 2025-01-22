@@ -56,7 +56,7 @@ remotes::install_local()
 # README
 usethis::use_readme_rmd()
 # Code of Conduct
-usethis::use_code_of_conduct("contact@fake.com")
+usethis::use_code_of_conduct("alain.corvisier@proton.me")
 # NEWS
 usethis::use_news_md()
 # Package structure (add this in a dev/Readme.md file)
@@ -115,7 +115,7 @@ fusen::add_flat_template("add")
 ```{r, eval=FALSE}
 # set and try pkgdown documentation website locally
 usethis::use_pkgdown()
-pkgdown::build_site()
+pkgdown::build_site(override = list(destination = "inst/site"))
 
 # build the tar.gz with vignettes to share with others
 devtools::build(vignettes = TRUE)
@@ -124,5 +124,18 @@ devtools::build(vignettes = TRUE)
 # usethis::create_github_token()
 # gitcreds::gitcreds_set()
 fusen::init_share_on_github()
+```
+
+# Coverage
+
+```{r}
+
+covr::package_coverage()
+
+my_coverage <- covr::package_coverage()
+covr::zero_coverage(my_coverage)
+
+covr::report()
+
 ```
 
