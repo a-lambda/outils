@@ -1,0 +1,40 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# outils
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of outils is to define some utilities that could help in usual R working.
+
+## Installation
+
+You can install the development version of outils like so:
+
+``` r
+# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+```
+
+## Example
+
+```{r example}
+library(outils)
+
+get_working_files()
+
+```
+
+
