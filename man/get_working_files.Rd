@@ -12,7 +12,7 @@ get_working_files(path = ".", recursive = TRUE)
 \item{recursive}{logical telling if the search shoud be recursive or not}
 }
 \value{
-vector of path strings to the working R files
+vector of strings consisting of relative paths to the working R files
 }
 \description{
 Cette fonction recherche tous les fichiers R susceptibles de contenir des définitions de fonction

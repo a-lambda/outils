@@ -7,7 +7,7 @@
 #' @param path character giving the root searching path
 #' @param recursive logical telling if the search shoud be recursive or not
 #'
-#' @return vector of path strings to the working R files
+#' @return vector of strings consisting of relative paths to the working R files
 #' 
 #' @export
 #' @examples
