@@ -1,0 +1,14 @@
+flat_outils.Rmd:
+  path: dev/flat_outils.Rmd
+  state: active
+  R: R/get_working_files.R
+  tests: tests/testthat/test-get_working_files.R
+  vignettes: vignettes/minimal.Rmd
+  inflate:
+    flat_file: dev/flat_outils.Rmd
+    vignette_name: Minimal
+    open_vignette: true
+    check: true
+    document: true
+    overwrite: ask
+    clean: ask

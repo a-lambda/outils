@@ -1,2 +1,4 @@
 ^dev$
 ^LICENSE\.md$
+^outils\.Rproj$
+^\.Rproj\.user$
