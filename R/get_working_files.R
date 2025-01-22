@@ -14,7 +14,10 @@
 #' get_working_files()
 get_working_files <- function(path = ".", recursive = TRUE){
     
-  fichiers <- list.files(pattern = "[.](R|[R|r|Q|q]md)$", recursive = TRUE)
+  fichiers <- list.files(path = path,
+                         recursive = recursive,
+                         pattern = "[.](R|[R|r|Q|q]md)$")
+  
   resultat <- fichiers[!grepl("[/]library[/]", fichiers)]
   
   return(resultat)
