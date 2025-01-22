@@ -18,30 +18,54 @@ library(testthat)
 pkgload::load_all(export_all = FALSE)
 ```
 
-# outils
+# get_working_files
 
-```{r function-outils}
-#' outils Title
+The goal of this function is to find all R files that can contains functions written in R language.
+
+The result is a vector of strings giving all the path to these R files relatively to the current directory.
+
+Path containing `library` are omitted. 
+    
+```{r function-get_working_files}
+#' Trouver les fichiers de travail R
+#' 
+#' Cette fonction recherche tous les fichiers R susceptibles de contenir des définitions de fonction
+#' 
+#' @param path character giving the root searching path
+#' @param recursive logical telling if the search shoud be recursive or not
 #'
-#' @return 1
+#' @return vector of path strings to the working R files
+#' 
 #' @export
-#'
-#' @examples
-outils <- function() {
-  1
+get_working_files <- function(path = ".", recursive = TRUE){
+    
+  fichiers <- list.files(pattern = "[.](R|[R|r|Q|q]md)$", recursive = TRUE)
+  resultat <- fichiers[!grepl("[/]library[/]", fichiers)]
+  
+  return(resultat)
+  
 }
 ```
-
-```{r examples-outils}
-outils()
+  
+```{r example-get_working_files}
+get_working_files()
 ```
+  
+```{r tests-get_working_files}
 
-```{r tests-outils}
-test_that("outils works", {
-  expect_true(inherits(outils, "function"))
+working_files1 <- get_working_files()
+working_files2 <- get_working_files(".")
+
+test_that("get_working_files works", {
+  expect_true(inherits(get_working_files, "function"))
+  
+  expect_equal(
+    object = identical(working_files1, working_files2),
+    expected = TRUE)
+
 })
 ```
-
+  
 
 ```{r development-inflate, eval=FALSE}
 # Run but keep eval=FALSE to avoid infinite loop
