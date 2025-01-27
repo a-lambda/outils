@@ -35,6 +35,11 @@ library(outils)
 
 get_working_files()
 
+working_files <- get_working_files()
+if (length(working_files) > 1) {
+  get_function_names(get_working_files()[[2]])
+}
+
 ```
 
 
