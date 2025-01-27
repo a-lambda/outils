@@ -41,3 +41,18 @@ get_working_files()
 
   
   
+# get_function_names
+
+The goal is to retrieve all user created function names in a string
+    
+  
+  
+```{r example-get_function_names}
+working_files <- get_working_files()
+if (length(working_files) > 0) {
+  get_function_names(get_working_files()[[1]])
+}
+```
+
+  
+  

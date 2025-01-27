@@ -7,6 +7,7 @@ editor_options:
 
 ```{r development, include=FALSE}
 library(testthat)
+library(stringi)
 ```
 
 <!--
@@ -69,7 +70,51 @@ test_that("get_working_files works", {
 })
 ```
   
+# get_function_names
 
+The goal is to retrieve all user created function names in a string
+    
+```{r development-get_function_names}
+# You can prepare the code of the get_function_names() function here
+```
+  
+```{r function-get_function_names}
+#' Trouver les noms de fonctions
+#' 
+#' Cette fonction recherche tous les noms de fonctions créées par l'utilisateur
+#' 
+#' @param file character Path to an R file (Rmd, qmd, R)
+#' @importFrom stringi stri_match_all_regex
+#' @return vector of strings containing user function names
+#' 
+#' @export
+get_function_names <- function(file) {
+  
+  lines <- paste0(readLines(file), collapse = '\n')
+  function_names <- stringi::stri_match_all_regex(
+    str = lines,
+    pattern = "([a-z|A-Z][a-z|A-Z|0-9|_]*?)[ ]+?[<][-][ ]+?function",
+    omit_no_match = FALSE
+  )[[1]][,2]
+  
+  return(function_names)
+  
+}
+```
+  
+```{r example-get_function_names}
+working_files <- get_working_files()
+if (length(working_files) > 0) {
+  get_function_names(get_working_files()[[1]])
+}
+```
+  
+```{r tests-get_function_names}
+test_that("get_function_names works", {
+  expect_true(inherits(get_function_names, "function")) 
+})
+```
+  
 ```{r development-inflate, eval=FALSE}
 # Run but keep eval=FALSE to avoid infinite loop
 # Execute in the console directly

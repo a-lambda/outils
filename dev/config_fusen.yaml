@@ -1,8 +1,12 @@
 flat_outils.Rmd:
   path: dev/flat_outils.Rmd
   state: active
-  R: R/get_working_files.R
-  tests: tests/testthat/test-get_working_files.R
+  R:
+  - R/get_function_names.R
+  - R/get_working_files.R
+  tests:
+  - tests/testthat/test-get_working_files.R
+  - tests/testthat/test-get_function_names.R
   vignettes: vignettes/outils.Rmd
   inflate:
     flat_file: dev/flat_outils.Rmd
@@ -12,3 +16,4 @@ flat_outils.Rmd:
     document: true
     overwrite: ask
     clean: ask
+    codecov: false
