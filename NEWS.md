@@ -2,4 +2,6 @@
 
 ## Major changes
 
-- first function `get_working_files`
+- function `get_working_files`
+
+- function `get_function_names`
