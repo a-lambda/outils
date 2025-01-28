@@ -4,20 +4,23 @@
 \alias{get_function_names}
 \title{Trouver les noms de fonctions}
 \usage{
-get_function_names(file)
+get_function_names(vector_of_files)
 }
 \arguments{
-\item{file}{character Path to an R file (Rmd, qmd, R)}
+\item{vector_of_files}{vector of character Path(s) to R file(s) (Rmd, qmd, R)}
 }
 \value{
-vector of strings containing user function names
+data.frame with each function name associated with filepath of file
+in which the function  definitiof strings containing user function names
 }
 \description{
 Cette fonction recherche tous les noms de fonctions créées par l'utilisateur
+et renvoie un dataframe renseignant
+\itemize{
+\item le nom de chaque fonction (colonne fonction)
+\item le nom de chaque chemin de fichier associé à la fonction (colonne fichier)
+}
 }
 \examples{
-working_files <- get_working_files()
-if (length(working_files) > 0) {
-  get_function_names(get_working_files()[[1]])
-}
+get_function_names(get_working_files())
 }

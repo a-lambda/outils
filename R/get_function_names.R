@@ -3,26 +3,33 @@
 #' Trouver les noms de fonctions
 #' 
 #' Cette fonction recherche tous les noms de fonctions créées par l'utilisateur
+#' et renvoie un dataframe renseignant 
+#' - le nom de chaque fonction (colonne fonction)
+#' - le nom de chaque chemin de fichier associé à la fonction (colonne fichier)
 #' 
-#' @param file character Path to an R file (Rmd, qmd, R)
+#' @param vector_of_files vector of character Path(s) to R file(s) (Rmd, qmd, R)
 #' @importFrom stringi stri_match_all_regex
-#' @return vector of strings containing user function names
+#' @return data.frame with each function name associated with filepath of file 
+#' in which the function  definitiof strings containing user function names
 #' 
 #' @export
 #' @examples
-#' working_files <- get_working_files()
-#' if (length(working_files) > 0) {
-#'   get_function_names(get_working_files()[[1]])
-#' }
-get_function_names <- function(file) {
+#' get_function_names(get_working_files())
+get_function_names <- function(vector_of_files) {
   
-  lines <- paste0(readLines(file), collapse = '\n')
-  function_names <- stringi::stri_match_all_regex(
-    str = lines,
-    pattern = "([a-z|A-Z][a-z|A-Z|0-9|_]*?)[ ]+?[<][-][ ]+?function",
-    omit_no_match = FALSE
-  )[[1]][,2]
+  fonction <- character(0)
+  fichier  <- character(0)
+  for (file in vector_of_files) {
+    lines <- paste0(readLines(file), collapse = '\n')
+    function_names <- stringi::stri_match_all_regex(
+      str = lines,
+      pattern = "([a-z|A-Z][a-z|A-Z|0-9|_]*?)[ ]+?[<][-][ ]+?function",
+      omit_no_match = FALSE
+      )[[1]][,2]
+    fonction <- c(fonction, function_names)
+    fichier  <- c(fichier, rep(file, length(function_names)))
+  }
   
-  return(function_names)
+  return(data.frame(fonction = fonction, fichier = fichier))
   
 }

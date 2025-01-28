@@ -33,9 +33,16 @@ get_working_files()
 #> [8] "tests/testthat/test-get_working_files.R" 
 #> [9] "vignettes/outils.Rmd"
 
-working_files <- get_working_files()
-if (length(working_files) > 1) {
-  get_function_names(get_working_files()[[2]])
-}
-#> [1] "get_working_files"  "get_function_names"
+get_function_names(get_working_files())
+#>                                     fichier           fonction
+#> 1                     dev/0-dev_history.Rmd               <NA>
+#> 2                       dev/flat_outils.Rmd  get_working_files
+#> 3                       dev/flat_outils.Rmd get_function_names
+#> 4                    R/get_function_names.R get_function_names
+#> 5                     R/get_working_files.R  get_working_files
+#> 6                                README.Rmd               <NA>
+#> 7                          tests/testthat.R               <NA>
+#> 8  tests/testthat/test-get_function_names.R               <NA>
+#> 9   tests/testthat/test-get_working_files.R               <NA>
+#> 10                     vignettes/outils.Rmd               <NA>
 ```
