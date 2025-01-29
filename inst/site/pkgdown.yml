@@ -1,0 +1,7 @@
+pandoc: '3.2'
+pkgdown: 2.1.1
+pkgdown_sha: ~
+articles:
+  my_sql: my_sql.html
+  outils: outils.html
+last_built: 2025-01-29T10:42Z
