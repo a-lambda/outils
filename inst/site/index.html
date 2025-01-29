@@ -73,28 +73,42 @@
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/a-lambda/outils" class="external-link">outils</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="reference/get_working_files.html">get_working_files</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "dev/0-dev_history.Rmd"                   </span></span>
-<span><span class="co">#&gt; [2] "dev/flat_outils.Rmd"                     </span></span>
-<span><span class="co">#&gt; [3] "R/get_function_names.R"                  </span></span>
-<span><span class="co">#&gt; [4] "R/get_working_files.R"                   </span></span>
-<span><span class="co">#&gt; [5] "README.Rmd"                              </span></span>
-<span><span class="co">#&gt; [6] "tests/testthat.R"                        </span></span>
-<span><span class="co">#&gt; [7] "tests/testthat/test-get_function_names.R"</span></span>
-<span><span class="co">#&gt; [8] "tests/testthat/test-get_working_files.R" </span></span>
-<span><span class="co">#&gt; [9] "vignettes/outils.Rmd"</span></span>
+<span><span class="co">#&gt;  [1] "dev/0-dev_history.Rmd"                   </span></span>
+<span><span class="co">#&gt;  [2] "dev/flat_my_sql.Rmd"                     </span></span>
+<span><span class="co">#&gt;  [3] "dev/flat_outils.Rmd"                     </span></span>
+<span><span class="co">#&gt;  [4] "R/get_function_names.R"                  </span></span>
+<span><span class="co">#&gt;  [5] "R/get_working_files.R"                   </span></span>
+<span><span class="co">#&gt;  [6] "R/my_con.R"                              </span></span>
+<span><span class="co">#&gt;  [7] "README.Rmd"                              </span></span>
+<span><span class="co">#&gt;  [8] "tests/testthat.R"                        </span></span>
+<span><span class="co">#&gt;  [9] "tests/testthat/test-get_function_names.R"</span></span>
+<span><span class="co">#&gt; [10] "tests/testthat/test-get_working_files.R" </span></span>
+<span><span class="co">#&gt; [11] "tests/testthat/test-my_con.R"            </span></span>
+<span><span class="co">#&gt; [12] "vignettes/my_sql.Rmd"                    </span></span>
+<span><span class="co">#&gt; [13] "vignettes/outils.Rmd"</span></span>
 <span></span>
 <span><span class="fu"><a href="reference/get_function_names.html">get_function_names</a></span><span class="op">(</span><span class="fu"><a href="reference/get_working_files.html">get_working_files</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt;                                     fichier           fonction</span></span>
-<span><span class="co">#&gt; 1                     dev/0-dev_history.Rmd               &lt;NA&gt;</span></span>
-<span><span class="co">#&gt; 2                       dev/flat_outils.Rmd  get_working_files</span></span>
-<span><span class="co">#&gt; 3                       dev/flat_outils.Rmd get_function_names</span></span>
-<span><span class="co">#&gt; 4                    R/get_function_names.R get_function_names</span></span>
-<span><span class="co">#&gt; 5                     R/get_working_files.R  get_working_files</span></span>
-<span><span class="co">#&gt; 6                                README.Rmd               &lt;NA&gt;</span></span>
-<span><span class="co">#&gt; 7                          tests/testthat.R               &lt;NA&gt;</span></span>
-<span><span class="co">#&gt; 8  tests/testthat/test-get_function_names.R               &lt;NA&gt;</span></span>
-<span><span class="co">#&gt; 9   tests/testthat/test-get_working_files.R               &lt;NA&gt;</span></span>
-<span><span class="co">#&gt; 10                     vignettes/outils.Rmd               &lt;NA&gt;</span></span></code></pre></div>
+<span><span class="co">#&gt;              fonction                                  fichier</span></span>
+<span><span class="co">#&gt; 1                &lt;NA&gt;                    dev/0-dev_history.Rmd</span></span>
+<span><span class="co">#&gt; 2              my_con                      dev/flat_my_sql.Rmd</span></span>
+<span><span class="co">#&gt; 3   get_working_files                      dev/flat_outils.Rmd</span></span>
+<span><span class="co">#&gt; 4  get_function_names                      dev/flat_outils.Rmd</span></span>
+<span><span class="co">#&gt; 5  get_function_names                   R/get_function_names.R</span></span>
+<span><span class="co">#&gt; 6   get_working_files                    R/get_working_files.R</span></span>
+<span><span class="co">#&gt; 7              my_con                               R/my_con.R</span></span>
+<span><span class="co">#&gt; 8                &lt;NA&gt;                               README.Rmd</span></span>
+<span><span class="co">#&gt; 9                &lt;NA&gt;                         tests/testthat.R</span></span>
+<span><span class="co">#&gt; 10               &lt;NA&gt; tests/testthat/test-get_function_names.R</span></span>
+<span><span class="co">#&gt; 11               &lt;NA&gt;  tests/testthat/test-get_working_files.R</span></span>
+<span><span class="co">#&gt; 12               &lt;NA&gt;             tests/testthat/test-my_con.R</span></span>
+<span><span class="co">#&gt; 13               &lt;NA&gt;                     vignettes/my_sql.Rmd</span></span>
+<span><span class="co">#&gt; 14               &lt;NA&gt;                     vignettes/outils.Rmd</span></span>
+<span></span>
+<span><span class="va">con</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/my_con.html">my_con</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">con</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "PqConnection"</span></span>
+<span><span class="co">#&gt; attr(,"package")</span></span>
+<span><span class="co">#&gt; [1] "RPostgres"</span></span></code></pre></div>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
