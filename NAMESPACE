@@ -2,4 +2,6 @@
 
 export(get_function_names)
 export(get_working_files)
+export(my_con)
+import(RPostgres)
 importFrom(stringi,stri_match_all_regex)

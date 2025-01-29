@@ -1,0 +1,79 @@
+---
+title: "flat_my_sql.Rmd empty"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r development, include=FALSE}
+library(testthat)
+library(RPostgres)
+```
+
+```{r development-load}
+# Load already included functions if relevant
+pkgload::load_all(export_all = FALSE)
+```
+
+# my_con
+
+This function creates a connection to the PostgreSQL database defined by OS environment variables
+
+  - DB_HOSTNAME : IP or DNS address of PostgreSQL server hostname
+  - DB_PORT     : Port number
+  - DB_NAME     : Name of the database
+  - DB_USER     : Name of the user
+  - DB_PASSWORD : Password associated to the user
+    
+```{r development-my_con}
+# You can prepare the code of the my_con() function here
+```
+  
+```{r function-my_con}
+#' Create PostgreSQL database connection
+#' 
+#' This function creates the connection to the PostgreSQL database 
+#' @import RPostgres
+#' @return S4 object PqConnection
+#' 
+#' @export
+my_con <- function(){
+
+  DB_HOSTNAME <- Sys.getenv("DB_HOSTNAME")
+  DB_USER <- Sys.getenv("DB_USER")
+  DB_PASSWORD <- Sys.getenv("DB_PASSWORD")
+  DB_PORT <- Sys.getenv("DB_PORT")
+  DB_NAME <- Sys.getenv("DB_NAME")
+
+  con <- RPostgres::dbConnect(
+    drv = RPostgres::Postgres(), 
+    dbname = DB_NAME,
+    host = DB_HOSTNAME,
+    port = DB_PORT,
+    user = DB_USER,
+    password = DB_PASSWORD
+  )
+
+  return(con)
+  
+}
+
+```
+
+```{r example-my_con}
+con <- my_con()
+```
+  
+```{r tests-my_con}
+test_that("my_con works", {
+  expect_true(inherits(my_con, "function")) 
+})
+```
+  
+
+```{r development-inflate, eval=FALSE}
+# Run but keep eval=FALSE to avoid infinite loop
+# Execute in the console directly
+fusen::inflate(flat_file = "dev/flat_my_sql.Rmd", vignette_name = "my_SQL")
+```
+

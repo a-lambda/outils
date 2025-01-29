@@ -1,3 +1,18 @@
+flat_my_sql.Rmd:
+  path: dev/flat_my_sql.Rmd
+  state: active
+  R: R/my_con.R
+  tests: tests/testthat/test-my_con.R
+  vignettes: vignettes/my_sql.Rmd
+  inflate:
+    flat_file: dev/flat_my_sql.Rmd
+    vignette_name: my_SQL
+    open_vignette: true
+    check: true
+    document: true
+    overwrite: ask
+    clean: ask
+    codecov: false
 flat_outils.Rmd:
   path: dev/flat_outils.Rmd
   state: active

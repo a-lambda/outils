@@ -1,3 +1,9 @@
+# outils 0.0.0.9002
+
+## Major changes
+
+- function `my_con`
+
 # outils 0.0.0.9001
 
 ## Major changes
