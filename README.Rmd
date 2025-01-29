@@ -37,6 +37,9 @@ get_working_files()
 
 get_function_names(get_working_files())
 
+con <- my_con()
+class(con)
+
 ```
 
 
